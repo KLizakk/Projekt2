@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="500"
+		Width="300" Height="500"
+        x:Class="Projekt2.Views.NowyKlient"
+        Title="NowyKlient">
+	<Grid Background="Gray" ColumnDefinitions="1*,1*" RowDefinitions="1*,1*,1*,1*,1*,1*,1*,1*,1*">
+		<TextBlock Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" >E-Mail</TextBlock>
+		<TextBlock Margin="5" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >Imię</TextBlock>
+		<TextBlock Margin="5" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" >Nazwisko</TextBlock>
+		<TextBlock Margin="5" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" >Telefon</TextBlock>
+		<TextBlock Margin="5" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" >Miasto</TextBlock>
+		<TextBlock Margin="5" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" >Ulica</TextBlock>
+		<TextBlock Margin="5" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" >NrBudynku</TextBlock>
+		<TextBlock Margin="5" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" >KodPocztowy</TextBlock>
+
+		<TextBox x:Name="DEmail" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+		<TextBox x:Name="DImie" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"></TextBox>
+		<TextBox x:Name="DNazwisko" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"></TextBox>
+		<TextBox x:Name="DTelefon" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"></TextBox>
+		<TextBox x:Name="DMiasto" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"></TextBox>
+		<TextBox x:Name="DUlica" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center"></TextBox>
+		<TextBox x:Name="DNrBudynku" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center"></TextBox>
+		<TextBox x:Name="DKodPocztowy" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center"></TextBox>
+		<Button Grid.Row="8" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Dodaj_Click">Dodaj</Button>
+	</Grid>
+</Window>

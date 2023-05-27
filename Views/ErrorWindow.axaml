@@ -1,0 +1,13 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="100"
+		Width="200" Height="100"
+        x:Class="Projekt2.Views.ErrorWindow"
+        Title="ErrorWindow">
+	<Grid RowDefinitions="1*,1*" Background="Gray">
+		<TextBlock VerticalAlignment="Center" Background="Red" HorizontalAlignment="Center" >Źle wprowadzone dane</TextBlock>
+		<Button VerticalAlignment="Center" Background="Blue" HorizontalAlignment="Center" Grid.Row="1" Click="OK_click">OK</Button>
+	</Grid>
+</Window>
