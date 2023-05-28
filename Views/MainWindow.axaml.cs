@@ -19,7 +19,11 @@ namespace Projekt2.Views
             //MainWindowViewModel.Pokaz();
             if (e.Key == Key.Enter && EmailKlienta.Text != "")
             {
+<<<<<<< HEAD
                 MainWindowViewModel.PokazKlienta(TBimie, TBnazwisko, TBemail, TBadres, TBtelefon, EmailKlienta);
+=======
+                MainWindowViewModel.PokazKlienta(TBimie,TBnazwisko,TBemail,TBadres,TBtelefon,EmailKlienta);
+>>>>>>> 1487d57bfcc4e91284d8affd50e68e5e2a2b3fdb
                 EmailKlienta.Text = "";
             }
         }
@@ -29,7 +33,11 @@ namespace Projekt2.Views
         {
             if (e.Key == Key.Enter && NazwaUtworu.Text != "")
             {
+<<<<<<< HEAD
                 MainWindowViewModel.PokazUtwor(NazwaUtworu, LBNazwyPlyt);
+=======
+                MainWindowViewModel.PokazUtwor(NazwaUtworu,LBNazwyPlyt);
+>>>>>>> 1487d57bfcc4e91284d8affd50e68e5e2a2b3fdb
             }
         }
 
@@ -37,6 +45,7 @@ namespace Projekt2.Views
         private void DodanieKlienta_Click(object sender, RoutedEventArgs e)
         {
             MainWindowViewModel.DodawanieKlientaOkno();
+<<<<<<< HEAD
 
 
         }
@@ -53,6 +62,10 @@ namespace Projekt2.Views
         private void Zwroc(object sender, RoutedEventArgs e)
         {
             MainWindowViewModel.Zwroc(WEmail,WNazwa);
+=======
+            
+
+>>>>>>> 1487d57bfcc4e91284d8affd50e68e5e2a2b3fdb
         }
 
 

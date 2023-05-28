@@ -4,13 +4,20 @@ using Avalonia.Input;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using Projekt2.Views;
+<<<<<<< HEAD
 using System;
+=======
+>>>>>>> 1487d57bfcc4e91284d8affd50e68e5e2a2b3fdb
 
 namespace Projekt2.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1487d57bfcc4e91284d8affd50e68e5e2a2b3fdb
 
 
     public static void PokazKlienta(TextBlock TBimie, TextBlock TBNazwisko, TextBlock TBEmail, TextBlock TBAdres, TextBlock TBtelefon, TextBox tbxEmail)
@@ -89,6 +96,7 @@ public class MainWindowViewModel : ViewModelBase
 
     }
 
+<<<<<<< HEAD
     public static void DodanieKlienta(TextBox Email, TextBox Imie, TextBox Nazwisko, TextBox Telefon, TextBox Miasto, TextBox Ulica, TextBox NrDomu, TextBox KodPocztowy)
     {
 
@@ -212,6 +220,24 @@ public class MainWindowViewModel : ViewModelBase
     }
 
 
+=======
+    public static void DodanieKlienta(TextBox Email , TextBox Imie, TextBox Nazwisko,TextBox Telefon, TextBox Miasto, TextBox Ulica, TextBox NrDomu, TextBox KodPocztowy)
+    {
+        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kacper\\Desktop\\AVALONIA\\Projekt2\\DATABASE\\KolekcjaMuzyki.mdf;Integrated Security=True";
+        string dodanieklienta = $"INSERT Klient([E-Mail],Imię,Nazwisko,TELEFON,Miasto,Ulica,NrBudynku,KodPocztowy)\r\nVALUES('{Email.Text}','{Imie.Text}','{Nazwisko.Text}','{Telefon.Text}','{Miasto.Text}','{Ulica.Text}','{NrDomu.Text}','{KodPocztowy.Text}');";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            using (SqlCommand command = new SqlCommand(dodanieklienta, connection))
+            {
+
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
+
+    }
+>>>>>>> 1487d57bfcc4e91284d8affd50e68e5e2a2b3fdb
 
 
 

@@ -57,20 +57,35 @@
 		</Grid>
 
 		<Grid Grid.Row="2" Grid.Column="3" ColumnDefinitions="auto,auto">
+<<<<<<< HEAD
 			<Button Background="Green" Margin="5,5" Click="Wypozycz" >Wypożyczenie</Button>
 			<Button  Background="Red" Margin="5,5" Click="Zwroc" Grid.Column="1" >Zwrot</Button>
+=======
+			<Button Background="Green" Margin="5,5" x:Name="Wypożycz" >Wypożyczenie</Button>
+			<Button  Background="Red" Margin="5,5" x:Name="Zwrot" Grid.Column="1" >Zwrot</Button>
+>>>>>>> 1487d57bfcc4e91284d8affd50e68e5e2a2b3fdb
 		</Grid>
 			
 		<Grid Grid.Row="2" Grid.Column="1" RowDefinitions="1*,1*" ColumnDefinitions="1*,1*">
 			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Email</TextBlock>
+<<<<<<< HEAD
 			<TextBox x:Name="WEmail" Grid.Row="1"  Margin="5,5" Watermark="Wprowadź email" TextWrapping="Wrap" FontSize="10"></TextBox>
 			<TextBlock HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center">Nazwa płyty</TextBlock>
 			<TextBox x:Name="WNazwa" Grid.Row="1" Grid.Column="1" Margin="5,5" Watermark="Wprowadź nazwe" TextWrapping="Wrap" FontSize="10"></TextBox>
+=======
+			<TextBox Grid.Row="1"  Margin="5,5" Watermark="Wprowadź email" TextWrapping="Wrap" FontSize="10"></TextBox>
+			<TextBlock HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center">ID płyty</TextBlock>
+			<TextBox Grid.Row="1" Grid.Column="1" Margin="5,5" Watermark="Wprowadź ID" TextWrapping="Wrap" FontSize="10"></TextBox>
+>>>>>>> 1487d57bfcc4e91284d8affd50e68e5e2a2b3fdb
 		</Grid>
 
 		<Grid Grid.Row="2" RowDefinitions="auto,auto">
 			<Button Background="Purple" Margin="10" Click="DodanieKlienta_Click" >Dodanie Klienta</Button>
+<<<<<<< HEAD
 			<Button Background="Aqua"  Margin="10" Grid.Row="1" Click="DodaniePlyty_Click">Dodanie płyty</Button>		
+=======
+			<Button Background="Aqua"  Margin="10" Grid.Row="1">Dodanie płyty</Button>		
+>>>>>>> 1487d57bfcc4e91284d8affd50e68e5e2a2b3fdb
 		</Grid>
 		
 
