@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Projekt2.Models
+{
+    public class Magazyn
+    {
+        public string NazwaPłyty { get; set; }
+        public int Ilość { get; set; }
+    }
+}
