@@ -1,6 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Projekt2.Models;
 using Projekt2.ViewModels;
 using System.Collections.Generic;
 
@@ -18,7 +19,7 @@ namespace Projekt2.Views
         }
 
 
-        List<string> List { get; set; }
+        List<string> Lista { get; set; }
 
         //wyszukiwanie po Emailu klienta
         private void EnterEmail(object sender, KeyEventArgs e)
@@ -33,33 +34,21 @@ namespace Projekt2.Views
         }
         private void Poka¿Klientów(object sender, RoutedEventArgs e)
         {
-            //KatalogKlientów katalogKlientów = new();
+            KatalogKlientów katalogKlientów = new();
+            List<string> lista = new List<string>();
 
-            //foreach (var item in katalogKlientów.KatalogKlienta())
-            //{
-            //    if (!string.IsNullOrEmpty(item.Email))
-            //    {
-            //        List.Add(item.Email);
-            //    }
-                
-            //}
-           
+            foreach (var item in katalogKlientów.KatalogKlienta())
+            {
+                if (!string.IsNullOrEmpty(item.Email))
+                {
+                    lista.Add(item.Email);
+                }
+
+            }
+            Lista = lista;
         }
 
-        //wyszukiwanie nazw p³yt po Nazwie utworu , ma zwracac liste p³yt na których wystêpuje dany utwór
-        //private void UtworEnter(object sender, KeyEventArgs e)
-        //{
-        //    if (e.Key == Key.Enter && NazwaUtworu.Text != "")
-        //    {
-
-        //        MainWindowViewModel.PokazUtwor(NazwaUtworu, LBNazwyPlyt);
-
-        //        MainWindowViewModel.PokazUtwor(NazwaUtworu,LBNazwyPlyt);
-
-        //    }
-        //}
-
-        //otwiera okno dodawania klienta
+     
         private void DodanieKlienta_Click(object sender, RoutedEventArgs e)
         {
             MainWindowViewModel.DodawanieKlientaOkno();

@@ -26,9 +26,9 @@
 			<ListBox Items="{Binding Lista}" Grid.Row="1">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						<Border Background="Red" CornerRadius="4" Padding="4">
-							<TextBlock Text="{Binding}"/>
-						</Border>
+						<TextBlock Height="13" Background="Aqua" Margin="10">
+							
+						</TextBlock>
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
