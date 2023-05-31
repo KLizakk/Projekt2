@@ -21,9 +21,6 @@ namespace Projekt2.Views
             {
 
                 MainWindowViewModel.PokazKlienta(TBimie, TBnazwisko, TBemail, TBadres, TBtelefon, EmailKlienta);
-
-                MainWindowViewModel.PokazKlienta(TBimie,TBnazwisko,TBemail,TBadres,TBtelefon,EmailKlienta);
-
                 EmailKlienta.Text = "";
             }
         }
@@ -57,7 +54,7 @@ namespace Projekt2.Views
 
         private void Wypozycz(object sender, RoutedEventArgs e)
         {
-            MainWindowViewModel.Wypozyczenie(WEmail,WNazwa);
+            MainWindowViewModel.Wypozycz(WEmail, WNazwa);
         }
         private void Zwroc(object sender, RoutedEventArgs e)
         {

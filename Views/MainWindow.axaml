@@ -35,45 +35,32 @@
 			<TextBlock Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right">Telefon : </TextBlock>
 			<TextBlock x:Name="TBtelefon" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></TextBlock>
 		</Grid>
-		<!--Opis utworu-->
-		<Grid Grid.Column="1" RowDefinitions="1*,1*">
-			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" >Szukaj Utworu </TextBlock>
-			<TextBox Grid.Row="1" x:Name="NazwaUtworu" Watermark="Wprowadź nazwę utworu" KeyDown="UtworEnter"></TextBox>
-		</Grid>
-		<!--Utwór-->	
-		<Grid  Grid.Row="1" Grid.Column="1"  RowDefinitions="1*,6*">
-			<TextBlock FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" >Nazwy płyt na których znajduje się utwór :</TextBlock>
-			<TextBlock x:Name="LBNazwyPlyt" Grid.Row="1" Margin="10" Background="GreenYellow" ></TextBlock>
-		</Grid>
-
+		
 		<Grid Grid.Column="2" RowDefinitions="1*,1*">
 			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Szukaj Płyty</TextBlock>
 			<TextBox Grid.Row="1" x:Name="NazwaPłyty" Watermark="Wprowadź nazwę płyty"></TextBox>
 		</Grid>
 
-		<Grid Grid.Row="1" Grid.Column="2" RowDefinitions="1*,3*">
-			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" >ID szukanych płyt :</TextBlock>
-			<ListBox x:Name="LBid" Grid.Row="1"></ListBox>
-		</Grid>
+		
 
 		<Grid Grid.Row="2" Grid.Column="3" ColumnDefinitions="auto,auto">
 
 			<Button Background="Green" Margin="5,5" Click="Wypozycz" >Wypożyczenie</Button>
 			<Button  Background="Red" Margin="5,5" Click="Zwroc" Grid.Column="1" >Zwrot</Button>
 
-			<Button Background="Green" Margin="5,5" x:Name="Wypożycz" >Wypożyczenie</Button>
+			<Button Background="Green" Margin="5,5" x:Name="Wypożycz" Click="Wypozycz" >Wypożyczenie</Button>
 			<Button  Background="Red" Margin="5,5" x:Name="Zwrot" Grid.Column="1" >Zwrot</Button>
 
 		</Grid>
 			
 		<Grid Grid.Row="2" Grid.Column="1" RowDefinitions="1*,1*" ColumnDefinitions="1*,1*">
 			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Email</TextBlock>
-
-			<TextBox x:Name="WEmail" Grid.Row="1"  Margin="5,5" Watermark="Wprowadź email" TextWrapping="Wrap" FontSize="10"></TextBox>
+            <TextBox x:Name="WEmail" Grid.Row="1"  Margin="5,5" Watermark="Wprowadź email" TextWrapping="Wrap" FontSize="10"></TextBox>
+			
 			<TextBlock HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center">Nazwa płyty</TextBlock>
 			<TextBox x:Name="WNazwa" Grid.Row="1" Grid.Column="1" Margin="5,5" Watermark="Wprowadź nazwe" TextWrapping="Wrap" FontSize="10"></TextBox>
 
-			<TextBox Grid.Row="1"  Margin="5,5" Watermark="Wprowadź email" TextWrapping="Wrap" FontSize="10"></TextBox>
+			
 			
 
 		</Grid>

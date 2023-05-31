@@ -15,6 +15,6 @@ public partial class NowaPlyta : Window
 
     private void Dodaj_Click(object sender, RoutedEventArgs e)
     {
-        MainWindowViewModel.DodajPlyte(NazwaPlyty,Ilosc);
+        NowaP³ytaViewModel.DodajPlyte(NazwaPlyty,Ilosc);
     }
 }

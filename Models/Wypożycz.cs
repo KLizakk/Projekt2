@@ -8,32 +8,33 @@ using System.Threading.Tasks;
 
 namespace Projekt2.Models
 {
-    public class DodajKlienta
+    public class Wypożycz
     {
-        public static void DodajKlientaa(Klient klient)
+        public static void Wypozyczenie(Wypożyczenie w)
         {
-            try
-            {
+           // try
+           // {
+
+
+
                 string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kacper\\Desktop\\AVALONIA\\Projekt2\\DATABASE\\KolekcjaMuzyki.mdf;Integrated Security=True";
-                string dodanieklienta = $"INSERT Klient([E-Mail],Imię,Nazwisko,TELEFON,Miasto,Ulica,NrBudynku,KodPocztowy)\r\nVALUES('{klient.Email}','{klient.Imię}','{klient.Nazwisko}','{klient.TELEFON}','{klient.Miasto}','{klient.Ulica}','{klient.NrBudynku}','{klient.KodPocztowy}');";
+                string WypozyczeniePlyty= $"INSERT Wypozyczenie([E-Mail],NazwaPłyty,DataWypożyczenia) VALUES('{w.Email}','{w.NazwaPłyty}',GETDATE()) UPDATE Magazyn SET Ilość = Ilość -1 WHERE NazwaPłyty = '{w.NazwaPłyty}'";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    using (SqlCommand command = new SqlCommand(dodanieklienta, connection))
+                    using (SqlCommand command = new SqlCommand(WypozyczeniePlyty, connection))
                     {
 
                         command.ExecuteNonQuery();
                     }
                     connection.Close();
                 }
-
-            }
-
-            catch (Exception ex)
-            {
-                ErrorWindow errorWindow = new ErrorWindow();
-                errorWindow.Show();
-            }
+           // }
+            //catch (Exception ex)
+            //{
+            //    ErrorWindow errorWindow = new ErrorWindow();
+            //    errorWindow.Show();
+            //}
         }
     }
 }
