@@ -46,9 +46,19 @@ namespace Projekt2.Views
 
             }
             Lista = lista;
+            Listaa.Items = lista;
         }
 
-     
+        private void Poka¿P³yty(object sender, RoutedEventArgs e)
+        {
+            List<string> lista = new();
+
+            MainWindowViewModel.KatalogPlyt(lista);
+            Listaa.Items = lista;
+            
+        }
+
+
         private void DodanieKlienta_Click(object sender, RoutedEventArgs e)
         {
             MainWindowViewModel.DodawanieKlientaOkno();

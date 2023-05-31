@@ -2,7 +2,7 @@
 using Projekt2.Views;
 using Projekt2.Models;
 using System.Linq;
-
+using System.Collections.Generic;
 
 namespace Projekt2.ViewModels;
 
@@ -59,6 +59,15 @@ public class MainWindowViewModel
         Zwrot.Zwrott(zwroc);
     }
 
+    public static void KatalogPlyt(List<string> lista)
+    {
+        KatalogPłyt katalogPłyt = new();
+
+        for (int i = 0; i < katalogPłyt.KatalogPlyt().Count; i++)
+        {
+            lista.Add(katalogPłyt.KatalogPlyt()[i].NazwaPłyty + "  ilość : " + katalogPłyt.KatalogPlyt()[i].Ilość.ToString());
+        }
+    }
 
 
 
