@@ -29,17 +29,17 @@ namespace Projekt2.Views
         }
 
         //wyszukiwanie nazw p³yt po Nazwie utworu , ma zwracac liste p³yt na których wystêpuje dany utwór
-        private void UtworEnter(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter && NazwaUtworu.Text != "")
-            {
+        //private void UtworEnter(object sender, KeyEventArgs e)
+        //{
+        //    if (e.Key == Key.Enter && NazwaUtworu.Text != "")
+        //    {
 
-                MainWindowViewModel.PokazUtwor(NazwaUtworu, LBNazwyPlyt);
+        //        MainWindowViewModel.PokazUtwor(NazwaUtworu, LBNazwyPlyt);
 
-                MainWindowViewModel.PokazUtwor(NazwaUtworu,LBNazwyPlyt);
+        //        MainWindowViewModel.PokazUtwor(NazwaUtworu,LBNazwyPlyt);
 
-            }
-        }
+        //    }
+        //}
 
         //otwiera okno dodawania klienta
         private void DodanieKlienta_Click(object sender, RoutedEventArgs e)

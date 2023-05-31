@@ -20,10 +20,7 @@ public class MainWindowViewModel : ViewModelBase
     {
        
         KatalogKlientów katalogKlientów = new();
-        foreach (var x in katalogKlientów.KatalogKlienta())
-        {
-            File.WriteAllText(@"C:\Users\kacper\Desktop\AVALONIA\Projekt2\test.txt", x.Email);
-        }
+        
         Klient klient = katalogKlientów.KatalogKlienta().FirstOrDefault(client => client.Email == tbxEmail.Text);
         //if (klient == null) { throw new Exception("Nie znaleziono klienta o podanym emailu"); }
         TBtelefon.Text = klient.TELEFON;
@@ -82,31 +79,31 @@ public class MainWindowViewModel : ViewModelBase
 
     //}
 
-    public static void PokazUtwor(TextBox NazwaUtworu, TextBlock LBnazwaPlyty)
-    {
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kacper\\Desktop\\AVALONIA\\Projekt2\\DATABASE\\KolekcjaMuzyki.mdf;Integrated Security=True";
-        string ListaPlyt = $"SELECT NazwaPłyty FROM UtworyNaPłycie AS UP JOIN Utwór AS U ON U.IdUtworu = UP.IdUtworu WHERE U.NazwaUtworu = '{NazwaUtworu.Text}';";
-        using (SqlConnection connection = new SqlConnection(connectionString))
-        {
-            connection.Open();
-            using (SqlCommand command = new SqlCommand(ListaPlyt, connection))
-            {
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        string NazwaPlyty = reader["NazwaPłyty"].ToString();
+    //public static void PokazUtwor(TextBox NazwaUtworu, TextBlock LBnazwaPlyty)
+    //{
+    //    string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kacper\\Desktop\\AVALONIA\\Projekt2\\DATABASE\\KolekcjaMuzyki.mdf;Integrated Security=True";
+    //    string ListaPlyt = $"SELECT NazwaPłyty FROM UtworyNaPłycie AS UP JOIN Utwór AS U ON U.IdUtworu = UP.IdUtworu WHERE U.NazwaUtworu = '{NazwaUtworu.Text}';";
+    //    using (SqlConnection connection = new SqlConnection(connectionString))
+    //    {
+    //        connection.Open();
+    //        using (SqlCommand command = new SqlCommand(ListaPlyt, connection))
+    //        {
+    //            using (SqlDataReader reader = command.ExecuteReader())
+    //            {
+    //                if (reader.Read())
+    //                {
+    //                    string NazwaPlyty = reader["NazwaPłyty"].ToString();
 
-                        LBnazwaPlyty.Text = NazwaPlyty;
-                        //Przypisanie wartości do TextBoxów
+    //                    LBnazwaPlyty.Text = NazwaPlyty;
+    //                    //Przypisanie wartości do TextBoxów
 
-                    }
-                }
-            }
-            connection.Close();
-        }
+    //                }
+    //            }
+    //        }
+    //        connection.Close();
+    //    }
 
-    }
+    //}
 
     public static void DodawanieKlientaOkno()
     {
@@ -115,34 +112,22 @@ public class MainWindowViewModel : ViewModelBase
 
     }
 
-    public static void DodanieKlienta(TextBox Email, TextBox Imie, TextBox Nazwisko, TextBox Telefon, TextBox Miasto, TextBox Ulica, TextBox NrDomu, TextBox KodPocztowy)
-    {
+    //public static void DodanieKlienta(TextBox Email, TextBox Imie, TextBox Nazwisko, TextBox Telefon, TextBox Miasto, TextBox Ulica, TextBox NrDomu, TextBox KodPocztowy)
+    //{
 
 
-        try
-        {
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kacper\\Desktop\\AVALONIA\\Projekt2\\DATABASE\\KolekcjaMuzyki.mdf;Integrated Security=True";
-            string dodanieklienta = $"INSERT Klient([E-Mail],Imię,Nazwisko,TELEFON,Miasto,Ulica,NrBudynku,KodPocztowy)\r\nVALUES('{Email.Text}','{Imie.Text}','{Nazwisko.Text}','{Telefon.Text}','{Miasto.Text}','{Ulica.Text}','{NrDomu.Text}','{KodPocztowy.Text}');";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(dodanieklienta, connection))
-                {
+    //    Klient klient = new();
+    //    klient.Miasto = Miasto.Text;
+    //    klient.Email = Email.Text;
+    //    klient.TELEFON = Telefon.Text;
+    //    klient.Ulica = Ulica.Text;
+    //    klient.Imię = Imie.Text;
+    //    klient.Nazwisko = Nazwisko.Text;
+    //    klient.NrBudynku = NrDomu.Text;
+    //    klient.KodPocztowy = KodPocztowy.Text;
+    //    DodajKlienta.DodajKlientaa(klient);
 
-                    command.ExecuteNonQuery();
-                }
-                connection.Close();
-            }
-
-        }
-
-        catch (Exception ex)
-        {
-            ErrorWindow errorWindow = new ErrorWindow();
-            errorWindow.Show();
-        }
-
-    }
+    //}
     //Dodanie plyty okno
     public static void DodaniePlytyOkno()
     {

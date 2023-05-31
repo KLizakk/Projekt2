@@ -12,7 +12,8 @@ namespace Projekt2.Views
         }
         private void Dodaj_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowViewModel.DodanieKlienta(DEmail,DImie,DNazwisko,DTelefon,DMiasto,DUlica,DNrBudynku,DKodPocztowy);
+            NowyKlientViewModel.DodanieKlienta(DEmail, DImie, DNazwisko, DTelefon, DMiasto, DUlica, DNrBudynku, DKodPocztowy);
+            
         }
 
     }
