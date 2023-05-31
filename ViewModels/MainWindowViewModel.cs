@@ -22,7 +22,7 @@ public class MainWindowViewModel : ViewModelBase
         KatalogKlientów katalogKlientów = new();
         
         Klient klient = katalogKlientów.KatalogKlienta().FirstOrDefault(client => client.Email == tbxEmail.Text);
-        //if (klient == null) { throw new Exception("Nie znaleziono klienta o podanym emailu"); }
+        if (klient == null) { throw new Exception("Nie znaleziono klienta o podanym emailu"); }
 
         TBAdres.Text = klient.Miasto + " " + klient.Ulica + " " + klient.NrBudynku + " " + klient.KodPocztowy;
         TBEmail.Text = klient.Email;
@@ -57,33 +57,14 @@ public class MainWindowViewModel : ViewModelBase
 
     public static void Zwroc(TextBox Email, TextBox NazwaPlyty)
     {
-        try
-        {
-
-
-
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kacper\\Desktop\\AVALONIA\\Projekt2\\DATABASE\\KolekcjaMuzyki.mdf;Integrated Security=True";
-            string dodaniePlyty = $"UPDATE Wypozyczenie\r\nSET DataZwrotu = GETDATE()\r\nWHERE NazwaPłyty = '{NazwaPlyty.Text}'\r\nAND [E-Mail] = '{Email.Text}'";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(dodaniePlyty, connection))
-                {
-
-                    command.ExecuteNonQuery();
-                }
-                connection.Close();
-            }
-        }
-        catch (Exception ex)
-        {
-            ErrorWindow errorWindow = new ErrorWindow();
-            errorWindow.Show();
-        }
+        Wypożyczenie zwroc = new();
+        zwroc.Email = Email.Text;
+        zwroc.NazwaPłyty = NazwaPlyty.Text;
+        Zwrot.Zwrott(zwroc);
     }
 
 
- 
+
 
 
 

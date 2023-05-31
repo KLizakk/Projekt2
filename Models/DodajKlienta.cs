@@ -27,6 +27,9 @@ namespace Projekt2.Models
                     connection.Close();
                 }
 
+                OknoSukcesu oknoSukcesu = new OknoSukcesu();
+                oknoSukcesu.Show();
+
             }
 
             catch (Exception ex)

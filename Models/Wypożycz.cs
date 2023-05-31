@@ -12,8 +12,8 @@ namespace Projekt2.Models
     {
         public static void Wypozyczenie(Wypożyczenie w)
         {
-           // try
-           // {
+            try
+            {
 
 
 
@@ -28,13 +28,15 @@ namespace Projekt2.Models
                         command.ExecuteNonQuery();
                     }
                     connection.Close();
-                }
-           // }
-            //catch (Exception ex)
-            //{
-            //    ErrorWindow errorWindow = new ErrorWindow();
-            //    errorWindow.Show();
-            //}
+                OknoSukcesu oknoSukcesu = new OknoSukcesu();
+                oknoSukcesu.Show();
+            }
+            }
+            catch (Exception ex)
+            {
+                ErrorWindow errorWindow = new ErrorWindow();
+                errorWindow.Show();
+            }
         }
     }
 }

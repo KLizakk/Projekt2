@@ -49,7 +49,7 @@
 			<Button  Background="Red" Margin="5,5" Click="Zwroc" Grid.Column="1" >Zwrot</Button>
 
 			<Button Background="Green" Margin="5,5" x:Name="Wypożycz" Click="Wypozycz" >Wypożyczenie</Button>
-			<Button  Background="Red" Margin="5,5" x:Name="Zwrot" Grid.Column="1" >Zwrot</Button>
+			<Button  Background="Red" Margin="5,5" x:Name="Zwrot" Grid.Column="1" Click="Zwroc" >Zwrot</Button>
 
 		</Grid>
 			
