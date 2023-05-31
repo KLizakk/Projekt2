@@ -15,7 +15,7 @@ public class DodajPłyte
     {
         try
         {
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kacper\\Desktop\\AVALONIA\\Projekt2\\DATABASE\\KolekcjaMuzyki.mdf;Integrated Security=True";
+            string connectionString = Connection.connectionString;
             string dodanieplyty = $"INSERT Magazyn(NazwaPłyty,Ilość)\r\nVALUES('{m.NazwaPłyty}',{m.Ilość});";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

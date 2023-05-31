@@ -1,36 +1,30 @@
 ﻿using Avalonia.Controls;
-using Microsoft.Data.SqlClient;
 using Projekt2.Models;
 using Projekt2.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Projekt2.ViewModels
+
+namespace Projekt2.ViewModels;
+
+public class NowaPłytaViewModel
 {
-    public class NowaPłytaViewModel
+    
+
+    public static void DodajPlyte(TextBox NazwaPlyty, TextBox ilosc)
     {
-        DodajPłyte dodaj = new();
+        Magazyn m = new Magazyn();
 
-        public static void DodajPlyte(TextBox NazwaPlyty, TextBox ilosc)
+        try
         {
-            Magazyn m = new Magazyn();
+            m.NazwaPłyty = NazwaPlyty.Text;
+            m.Ilość = int.Parse(ilosc.Text);
 
-            try
-            {
-                m.NazwaPłyty = NazwaPlyty.Text;
-                m.Ilość = int.Parse(ilosc.Text);
-
-                DodajPłyte.DodajPlytee(m);
-            }
-           catch (Exception ex)
-            {
-                ErrorWindow errorWindow = new ErrorWindow();
-                errorWindow.Show();
-            }
+            DodajPłyte.DodajPlytee(m);
+        }
+       catch (Exception ex)
+        {
+            ErrorWindow errorWindow = new ErrorWindow();
+            errorWindow.Show();
         }
     }
 }

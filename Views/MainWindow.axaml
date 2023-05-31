@@ -13,10 +13,26 @@
 	<Grid RowDefinitions="1*,2*,1*" ColumnDefinitions="1*,1*,1*">
 
 		<Grid Grid.Column="0" Grid.Row="0" RowDefinitions="1*,1*">
-			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Szukaj klienta</TextBlock>
+			<TextBlock HorizontalAlignment="Center"  VerticalAlignment="Center">Szukaj klienta</TextBlock>
 			<TextBox x:Name="EmailKlienta" Grid.Row="1" Watermark="Wprowadź email klienta" KeyDown="EnterEmail" ></TextBox>
 		</Grid>
 
+		<!--Tu ma być lista albo datagrid pokazujący wszystkie płyty-->
+		<Grid Grid.Column="1" Grid.RowSpan="2" RowDefinitions="1*,2*">
+			<Grid ColumnDefinitions="1*,1*" >
+				<Button VerticalAlignment="Center" Background="BlueViolet" HorizontalAlignment="Center" Click="PokażKlientów">Pokaż klientów</Button>
+				<Button Grid.Column="1" VerticalAlignment="Center" Background="BlueViolet" HorizontalAlignment="Center">Pokaż	</Button>
+			</Grid>
+			<ListBox Items="{Binding Lista}" Grid.Row="1">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Border Background="Red" CornerRadius="4" Padding="4">
+							<TextBlock Text="{Binding}"/>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</Grid>	
 		
 		<!-- Opis klienta-->
 		<Grid Grid.Row="1" ColumnDefinitions="Auto,Auto" RowDefinitions="1*,1*,1*,1*,1*">

@@ -1,10 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Projekt2.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Projekt2.Models
 {
@@ -17,7 +14,7 @@ namespace Projekt2.Models
 
 
 
-                string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kacper\\Desktop\\AVALONIA\\Projekt2\\DATABASE\\KolekcjaMuzyki.mdf;Integrated Security=True";
+                string connectionString = Connection.connectionString;
                 string WypozyczeniePlyty= $"INSERT Wypozyczenie([E-Mail],NazwaPłyty,DataWypożyczenia) VALUES('{w.Email}','{w.NazwaPłyty}',GETDATE()) UPDATE Magazyn SET Ilość = Ilość -1 WHERE NazwaPłyty = '{w.NazwaPłyty}'";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

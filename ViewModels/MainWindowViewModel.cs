@@ -1,19 +1,12 @@
 ﻿using Avalonia.Controls;
-using Avalonia.Input;
-
-using System.Data;
-using Microsoft.Data.SqlClient;
 using Projekt2.Views;
-
-using System;
-using JetBrains.Annotations;
 using Projekt2.Models;
 using System.Linq;
-using System.IO;
+
 
 namespace Projekt2.ViewModels;
 
-public class MainWindowViewModel : ViewModelBase
+public class MainWindowViewModel 
 {
 
     public static void PokazKlienta(TextBlock TBimie, TextBlock TBNazwisko, TextBlock TBEmail, TextBlock TBAdres, TextBlock TBtelefon, TextBox tbxEmail)
@@ -22,12 +15,15 @@ public class MainWindowViewModel : ViewModelBase
         KatalogKlientów katalogKlientów = new();
         
         Klient klient = katalogKlientów.KatalogKlienta().FirstOrDefault(client => client.Email == tbxEmail.Text);
-        if (klient == null) { throw new Exception("Nie znaleziono klienta o podanym emailu"); }
+        if (klient != null)
+        {
+            TBAdres.Text = klient.Miasto + " " + klient.Ulica + " " + klient.NrBudynku + " " + klient.KodPocztowy;
+            TBEmail.Text = klient.Email;
+            TBimie.Text = klient.Imię;
+            TBNazwisko.Text = klient.Nazwisko;
+        }
 
-        TBAdres.Text = klient.Miasto + " " + klient.Ulica + " " + klient.NrBudynku + " " + klient.KodPocztowy;
-        TBEmail.Text = klient.Email;
-        TBimie.Text = klient.Imię;
-        TBNazwisko.Text = klient.Nazwisko;
+       
 
 
     }
