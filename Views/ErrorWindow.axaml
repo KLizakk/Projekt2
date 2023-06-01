@@ -7,7 +7,7 @@
         x:Class="Projekt2.Views.ErrorWindow"
         Title="ErrorWindow">
 	<Grid RowDefinitions="1*,1*" Background="Gray">
-		<TextBlock VerticalAlignment="Center" Background="Red" HorizontalAlignment="Center" >Źle wprowadzone dane</TextBlock>
+		<TextBlock x:Name="Tekst" VerticalAlignment="Center" Background="Red" HorizontalAlignment="Center" >Źle wprowadzone dane</TextBlock>
 		<Button VerticalAlignment="Center" Background="Blue" HorizontalAlignment="Center" Grid.Row="1" Click="OK_click">OK</Button>
 	</Grid>
 </Window>

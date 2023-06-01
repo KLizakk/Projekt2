@@ -9,6 +9,7 @@ namespace Projekt2.Models
     {
         public static void Zwrott(Wypożyczenie w)
         {
+            
             try
             {
                 string connectionString = Connection.connectionString;
@@ -23,10 +24,12 @@ namespace Projekt2.Models
                     }
                     connection.Close();
                 }
+
             }
             catch (Exception ex)
             {
                 ErrorWindow errorWindow = new ErrorWindow();
+                errorWindow.Tekst.Text = "Nie udało sie zwrócić";
                 errorWindow.Show();
             }
 

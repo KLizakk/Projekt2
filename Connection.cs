@@ -9,6 +9,6 @@ namespace Projekt2
 {
     public static class Connection
     {
-        public static string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\kacper\\Desktop\\AVALONIA\\Projekt2\\DATABASE\\KolekcjaMuzyki.mdf;Integrated Security=True";
+        public static string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Desktop\\Projekt2\\KolekcjaMuzyki\\KolekcjaMuzyki.mdf;Integrated Security=True";
     }
 }

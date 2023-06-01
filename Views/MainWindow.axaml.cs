@@ -1,4 +1,4 @@
-using Avalonia.Controls;
+锘縰sing Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Projekt2.Models;
@@ -32,12 +32,12 @@ namespace Projekt2.Views
                 EmailKlienta.Text = "";
             }
         }
-        private void Poka縆lient體(object sender, RoutedEventArgs e)
+        private void Poka偶Klient贸w(object sender, RoutedEventArgs e)
         {
-            KatalogKlient體 katalogKlient體 = new();
+            KatalogKlient贸w katalogKlient贸w = new();
             List<string> lista = new List<string>();
 
-            foreach (var item in katalogKlient體.KatalogKlienta())
+            foreach (var item in katalogKlient贸w.KatalogKlienta())
             {
                 if (!string.IsNullOrEmpty(item.Email))
                 {
@@ -49,7 +49,7 @@ namespace Projekt2.Views
             Listaa.Items = lista;
         }
 
-        private void Poka縋硑ty(object sender, RoutedEventArgs e)
+        private void Poka偶P艂yty(object sender, RoutedEventArgs e)
         {
             List<string> lista = new();
 
@@ -82,7 +82,14 @@ namespace Projekt2.Views
 
         }
 
+        private void WypozyczeniaNieOddane(object semder, RoutedEventArgs e)
+        {
+            List<string> lista = new();
+            MainWindowViewModel.KatalogWypozyczen(lista);
 
+            ListaWypo偶ycze艅.Items = lista;
+
+        }
 
     }
 }

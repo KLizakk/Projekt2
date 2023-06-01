@@ -1,4 +1,4 @@
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
@@ -15,6 +15,6 @@ public partial class NowaPlyta : Window
 
     private void Dodaj_Click(object sender, RoutedEventArgs e)
     {
-        NowaP�ytaViewModel.DodajPlyte(NazwaPlyty,Ilosc);
+        NowaPłytaViewModel.DodajPlyte(NazwaPlyty,Ilosc);
     }
 }

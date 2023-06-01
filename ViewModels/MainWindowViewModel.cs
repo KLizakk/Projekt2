@@ -70,6 +70,15 @@ public class MainWindowViewModel
     }
 
 
+    public static void KatalogWypozyczen(List<string> lista)
+    {
+        KatalogWypozyczen katalogWypozyczen = new();
+        for (int i = 0; i < katalogWypozyczen.Wypo().Count; i++)
+        {
+            lista.Add(katalogWypozyczen.Wypo()[i].Email + " Wypożyczył : " + katalogWypozyczen.Wypo()[i].NazwaPłyty);
+        }
+    }
+
 
 
 

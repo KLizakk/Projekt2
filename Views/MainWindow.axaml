@@ -52,9 +52,17 @@
 			<TextBlock x:Name="TBtelefon" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></TextBlock>
 		</Grid>
 		
-		<Grid Grid.Column="2" RowDefinitions="1*,1*">
-			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Szukaj Płyty</TextBlock>
-			<TextBox Grid.Row="1" x:Name="NazwaPłyty" Watermark="Wprowadź nazwę płyty"></TextBox>
+		<Grid Grid.Column="2" Grid.RowSpan="2" RowDefinitions="1*,2*">
+			<Button HorizontalAlignment="Center" VerticalAlignment="Center" Click="WypozyczeniaNieOddane" >Pokaż wypożyczenia</Button>
+			<ListBox x:Name="ListaWypożyczeń" Margin="5,0,5,0"  Grid.Row="1">
+				<ListBox.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Background="Black"  Text="{Binding}">
+
+					</TextBlock>
+				</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
 		</Grid>
 
 		

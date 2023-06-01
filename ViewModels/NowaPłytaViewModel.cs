@@ -20,10 +20,13 @@ public class NowaPłytaViewModel
             m.Ilość = int.Parse(ilosc.Text);
 
             DodajPłyte.DodajPlytee(m);
+            OknoSukcesu oknoSukcesu = new();
+            oknoSukcesu.Show();
         }
-       catch (Exception ex)
+        catch (Exception ex)
         {
             ErrorWindow errorWindow = new ErrorWindow();
+            
             errorWindow.Show();
         }
     }
